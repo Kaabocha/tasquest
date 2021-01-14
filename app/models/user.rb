@@ -3,15 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
   has_many :tasks
   has_many :comments
 
-  with_options presense: true do
-    validates :email
+  with_options presence: true do
     validates :name
-    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
     validates :title
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
   end
   validates :email, uniqueness: true
   
