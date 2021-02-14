@@ -1,2 +1,15 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<main class="main">
+  <div class="inner">
+
+    <% if user_signed_in? %>
+      <div class="greeting">
+        今日も頑張りましょう!!
+        <%= link_to current_user.name, user_path(current_user.id), class: :greeting__link %>さん
+      </div>
+    <% end %>
+    <div class="card__wrapper">
+      <%= render partial: "task", collection: @tasks, locals: { task: @task } %>
+    </div>
+    
+  </div>
+</main>
