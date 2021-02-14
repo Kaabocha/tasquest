@@ -4,9 +4,10 @@
 
 | Column                     | Type                | Options                              |
 |----------------------------|---------------------|--------------------------------------|
-| email                      | string              | null: false, unique: true            |    <メールアドレス>
-| password                   | string              | null: false                          |    <パスワード>
-| name                       | string              | null: false                          |    <名前>
+| email                      | string              | null: false, unique: true            |
+| password                   | string              | null: false                          |
+| name                       | string              | null: false                          |
+
 
 ### Association
 has_many :tasks
@@ -15,10 +16,10 @@ has_many :comments
 
 ## tasks table
 
-| Column                                 | Type       | Options                           |
-|----------------------------------------|------------|-----------------------------------|
-| task_text                              | string     | null: false                       |    <テキスト>
-| user                                   | references | foreign_key: true                 |    <user_id>
+| Column                     | Type                | Options                              |
+|----------------------------|---------------------|--------------------------------------|
+| text                       | string              | null: false                          |
+| user_id                    | references          | foreign_key: true                    |
 
 
 ### Association
@@ -28,10 +29,12 @@ has_one :comment
 
 ## comments table
 
-| Column             | Type          | Options                                               |
-|--------------------|---------------|-------------------------------------------------------|
-| comment_text       | string        | null: false                                           |    <テキスト>
-| task               | references    | foreign_key: true                                     |    <task_id>
+| Column                     | Type          | Options                                     |
+|----------------------------|---------------|---------------------------------------------|
+| text                       | string        | null: false                                 |
+| task_id                    | references    | foreign_key: true                           |
+| user_id                    | references    | foreign_key: true                           |
+
 
 ### Association
 belongs_to :task
@@ -96,4 +99,3 @@ Taquest（SNS型タスク管理アプリ）
 
 ## ローカルでの動作方法
 （未記入）
-
