@@ -8,6 +8,7 @@
 | password                   | string              | null: false                          |
 | name                       | string              | null: false                          |
 
+
 ### Association
 has_many :tasks
 has_many :comments
@@ -19,6 +20,7 @@ has_many :comments
 |----------------------------|---------------------|--------------------------------------|
 | text                       | string              | null: false                          |
 | user_id                    | references          | foreign_key: true                    |
+
 
 ### Association
 belongs_to :user
@@ -37,7 +39,6 @@ has_one :comment
 ### Association
 belongs_to :task
 
-
 ## アプリケーション名 
 Taquest（SNS型タスク管理アプリ）
 
@@ -45,7 +46,6 @@ Taquest（SNS型タスク管理アプリ）
 このアプリでは毎日のタスクを管理することができるアプリケーションです。タスクを公開することによって他のユーザーから応援してもらうことができます。
 
 ## ペルソナ
-
 
 ## アプリケーションで使っている技術
 インフラ:heroku
