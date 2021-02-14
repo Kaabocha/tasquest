@@ -28,7 +28,7 @@
         <%= @name %>さんの今日のタスク
       </h2>
       <div class="user__card">
-        <%= render partial: "prototypes/prototype", collection: @prototypes, locals: { prototype: @prototype } %>
+        <%= render partial: "tasks/task", collection: @tasks, locals: { task: @task } %>
       </div>
     </div>
   </div>

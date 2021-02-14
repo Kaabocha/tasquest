@@ -2,36 +2,35 @@
   <div class="inner">
     <div class="task__wrapper">
       <p class="task__hedding">
-        <%= @prototype.title %>
+        <%= @task.title %>
       </p>
-      <%= link_to "by #{@prototype.user.name}", user_path(@prototype.user_id), class: :task__user %>
-      <% if user_signed_in? && current_user.id == @prototype.user_id %>
+      <%= link_to "by #{@task.user.name}", user_path(@task.user_id), class: :task__user %>
+      <% if user_signed_in? && current_user.id == @task.user_id %>
         <div class="task__manage">
-          <%= link_to "編集する", edit_prototype_path(@prototype.id), class: :task__btn %>
-          <%= link_to "削除する", prototype_path(@prototype.id), method: :delete, class: :task__btn %>
+          <%= link_to "編集する", edit_task_path(@task.id), class: :task__btn %>
+          <%= link_to "削除する", task_path(@task.id), method: :delete, class: :task__btn %>
         </div>
       <% end %>
       <div class="task__image">
-        <%= image_tag @prototype.image %>
+        <%= image_tag @task.image %>
       </div>
       <div class="task__body">
         <div class="task__detail">
           <p class="detail__title">キャッチコピー</p>
           <p class="detail__message">
-            <%= @prototype.catch_copy %>
+            <%= @task.catch_copy %>
           </p>
         </div>
         <div class="task__detail">
           <p class="detail__title">コンセプト</p>
           <p class="detail__message">
-            <%= @prototype.concept %>
+            <%= @task.concept %>
           </p>
         </div>
       </div>
       <div class="task__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? %>
-          <%= form_with(model: [@prototype, @comment], local: true) do |f| %>
+          <%= form_with(model: [@task, @comment], local: true) do |f| %>
             <div class="field">
               <%= f.label :text, "コメント" %><br />
               <%= f.text_field :text %>
