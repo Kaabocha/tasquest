@@ -4,17 +4,10 @@
 
 | Column                     | Type                | Options                              |
 |----------------------------|---------------------|--------------------------------------|
-<<<<<<< Updated upstream
 | email                      | string              | null: false, unique: true            |    <メールアドレス>
 | password                   | string              | null: false                          |    <パスワード>
 | name                       | string              | null: false                          |    <名前>
-| a_word                     | string              | null: false                          |    <一言>
-| title                      | string              | null: false                          |    <称号>
-=======
-| email                      | string              | null: false, unique: true            |
-| password                   | string              | null: false                          |
-| name                       | string              | null: false                          |
->>>>>>> Stashed changes
+
 
 ### Association
 has_many :tasks
@@ -23,18 +16,10 @@ has_many :comments
 
 ## tasks table
 
-<<<<<<< Updated upstream
 | Column                                 | Type       | Options                           |
 |----------------------------------------|------------|-----------------------------------|
 | task_text                              | string     | null: false                       |    <テキスト>
 | user                                   | references | foreign_key: true                 |    <user_id>
-| good                                   |            |                                   |    <いいね>
-=======
-| Column                     | Type                | Options                              |
-|----------------------------|---------------------|--------------------------------------|
-| text                       | string              | null: false                          |
-| user_id                    | references          | foreign_key: true                    |
->>>>>>> Stashed changes
 
 ### Association
 belongs_to :user
@@ -43,25 +28,13 @@ has_one :comment
 
 ## comments table
 
-<<<<<<< Updated upstream
-| Column             | Type       | Options                                               |
-|--------------------|------------|-------------------------------------------------------|
-| comment_text       | string     | null: false                                           |    <テキスト>
-| task               | integer    | null: false                                           |    <task_id>
+| Column             | Type          | Options                                               |
+|--------------------|---------------|-------------------------------------------------------|
+| comment_text       | string        | null: false                                           |    <テキスト>
+| task               | references    | foreign_key: true                                     |    <task_id>
 
 ### Association
 belongs_to :task
-=======
-| Column                     | Type          | Options                                     |
-|----------------------------|---------------|---------------------------------------------|
-| text                       | string        | null: false                                 |
-| task_id                    | references    | foreign_key: true                           |
-| user_id                    | references    | foreign_key: true                           |
-
-
-### Association
-belongs_to :task
-
 
 ## アプリケーション名 
 Taquest（SNS型タスク管理アプリ）
@@ -70,7 +43,6 @@ Taquest（SNS型タスク管理アプリ）
 このアプリでは毎日のタスクを管理することができるアプリケーションです。タスクを公開することによって他のユーザーから応援してもらうことができます。
 
 ## ペルソナ
-
 
 ## アプリケーションで使っている技術
 インフラ:heroku
@@ -124,4 +96,5 @@ Taquest（SNS型タスク管理アプリ）
 
 ## ローカルでの動作方法
 （未記入）
->>>>>>> Stashed changes
+（未記入）
+
