@@ -8,7 +8,6 @@
 | password                   | string              | null: false                          |    <パスワード>
 | name                       | string              | null: false                          |    <名前>
 
-
 ### Association
 has_many :tasks
 has_many :comments
@@ -20,6 +19,7 @@ has_many :comments
 |----------------------------------------|------------|-----------------------------------|
 | task_text                              | string     | null: false                       |    <テキスト>
 | user                                   | references | foreign_key: true                 |    <user_id>
+
 
 ### Association
 belongs_to :user
@@ -95,6 +95,5 @@ Taquest（SNS型タスク管理アプリ）
 （ER図を添付する）
 
 ## ローカルでの動作方法
-（未記入）
 （未記入）
 
